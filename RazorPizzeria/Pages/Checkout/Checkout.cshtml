@@ -1,0 +1,20 @@
+﻿@page
+@model RazorPizzeria.Pages.Checkout.CheckoutModel
+@{
+}
+<h1>您的訂單</h1>
+@{
+    var imgPath = "~/images/" + (Model.ImageTitle + ".png");
+}
+<div class="align-content-center">
+    <div class="col-3 mx-auto mb-5">
+        <img src=@imgPath class="w-100" asp-append-version ="true" />
+        <p>我們已經收到您的訂單，將開始製作您的 @Model.PizzaName</p>
+
+        <p>您的訂單金額為  @Model.PizzaPrice NTD</p>
+        <br />
+        <a class="btn alert-primary mt-1 mx-auto " asp-area="" asp-page="ThankYou">訂單確認</a>
+
+    </div>
+
+</div>

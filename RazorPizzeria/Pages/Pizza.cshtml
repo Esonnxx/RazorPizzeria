@@ -1,0 +1,47 @@
+﻿@page
+@model RazorPizzeria.Pages.PizzaModel
+@{
+}
+
+<div class= "text-center">
+    <div class="mainText">
+        <h1 class="display-4 text-capitalize text-black">最美味的Pizza底加拉!</h1>
+        <h4>選一個，或是搭配屬於自己的Pizza</h4>
+        <p class="smallText"><i>一個訂單一個Pizza</i></p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 mb-5 mt-5">
+            <div class="w-100 row makeYourOwnDiv">
+                <div class="col-4">
+                    <img src="~/images/CreatePizza.jpg" class="w-100"/>
+                </div>
+                <div class="col-8 align-items-center">
+                    <div class="align-middle makeYourOwnText">
+                        <h3 style="text-align:left">馬上製作屬於自己的Pizza</h3>
+                        <a class="btn btn-primary" style="float: left" asp-area="" asp-page="Forms/CustomPizza">開始製作</a>
+                    </div>
+                </div>
+            </div>         
+        </div>
+        
+            @foreach(var  pizza in Model.fakePizzaDb)
+            {
+            var imgPath = "~/images/" + (pizza.ImageTitle + ".png");
+            <div class="col-4 mb-5">
+                <h1> @pizza.PizzaName </h1>
+                <a class="pizza-img" asp-area="" asp-page="Checkout/Checkout"
+                asp-route-ImageTitle ="@pizza.ImageTitle" asp-route-PizzaPrice="@pizza.FinalPrice" asp-route-PizzaName="@pizza.PizzaName">
+                    <img src="@imgPath" class="w-100" asp-append-version="true" />
+                </a>
+                <br />
+                </div>
+
+            }
+             
+    </div>
+
+</div>
+<a class="nav-link text-dark" asp-area="" asp-page="Forms/CustomPizza">CustomPizza</a>
+<a class="nav-link text-dark" asp-area="" asp-page="Checkout/Checkout">Checkout</a>

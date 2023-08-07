@@ -1,0 +1,26 @@
+﻿@page
+@model RazorPizzeria.Pages.Forms.CustomPizzaModel
+@{
+}
+<div class="text-center container">
+    <h1>搭配屬於自己的Pizza吧!!!</h1>
+    <form method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 rounded-5 pb-5 bg-light col-4">
+        <input type="text" asp-for="Pizza.PizzaName" placeholder="幫你的Pizza 取個名字吧!!!" />
+        <br/>
+        <input type="checkbox" asp-for="Pizza.PanCrust" placeholder="厚片Pizza" />厚片Pizza
+        <input type="checkbox" asp-for="Pizza.ThinCrust" placeholder="薄片Pizza" />薄片Pizza<br />
+        <input type="checkbox" asp-for="Pizza.TomatoSouce" placeholder="番茄醬" />番茄醬<br/>
+        <input type="checkbox" asp-for="Pizza.Cheese" placeholder="起司" />起司<br />
+        <input type="checkbox" asp-for="Pizza.Peperoni" placeholder="義士香腸" />義士香腸<br />
+        <input type="checkbox" asp-for="Pizza.Mushroom" placeholder="蘑菇" />蘑菇<br />
+        <input type="checkbox" asp-for="Pizza.Onion" placeholder="洋蔥" />洋蔥<br />
+        <input type="checkbox" asp-for="Pizza.Pineapple" placeholder="鳳梨" />鳳梨<br />
+        <input type="checkbox" asp-for="Pizza.Ham" placeholder="火腿" />火腿<br />
+        <input type="checkbox" asp-for="Pizza.Shrimp" placeholder="大蝦" />大蝦<br />
+        <input type="checkbox" asp-for="Pizza.Chicken" placeholder="雞肉" />雞肉<br />
+        
+        <button class="btn btn-primary mt-1" type="submit">確認</button>
+
+    </form>
+
+</div>
